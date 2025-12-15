@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import localFont from "next/font/local";
 import "./globals.css";
 import LanguageToggle from "./components/LanguageToggle";
+import Link from "next/link";
+import DesktopNav from "./components/DesktopNav";
 
 const pretendard = localFont({
   src: "./static/fonts/PretendardVariable.woff2",
@@ -43,16 +44,8 @@ export default function RootLayout({
                   WASH & GUY
                 </Link>
               </div>
-              <nav className="hidden flex-1 justify-center gap-16 text-base font-semibold tracking-wide md:flex">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="whitespace-nowrap transition hover:text-blue-600"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+              <nav className="hidden flex-1 md:flex">
+                <DesktopNav links={navLinks} />
               </nav>
               <div className="hidden flex-1 justify-end md:flex">
                 <LanguageToggle />

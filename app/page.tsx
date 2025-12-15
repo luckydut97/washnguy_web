@@ -14,10 +14,12 @@ const industries = [
   "정장 / 의류 / 린넨 일괄 세탁",
 ];
 
+const yearsOfProcess = new Date().getFullYear() - 2013;
+
 export default function Home() {
   return (
     <div className="w-full">
-      <section className="relative min-h-screen w-full overflow-hidden">
+      <section className="relative min-h-[85vh] w-full overflow-hidden">
         <div
           className="absolute inset-0"
           aria-hidden
@@ -33,15 +35,15 @@ export default function Home() {
                 기업 전문 세탁 대행
               </p>
               <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight md:max-w-5xl md:text-5xl">
-                의류는 물론, 고객의 마음까지 깨끗하게
+                품질은 기본, 고객의 만족이 곧 세탁의 완성입니다.
                 <br className="hidden md:block" />
-                프리미엄 세탁 서비스
+                천천히 한걸음씩 정도를 지키겠습니다.
               </h1>
-              <p className="mt-6 max-w-3xl text-lg text-slate-100/90 md:max-w-4xl">
-                대량 세탁 특화와 친환경 프로세스를 결합해 기업 고객만을 위한 맞춤형 세탁 솔루션을 제공합니다.
+              <p className="mt-6 max-w-3xl text-xl font-medium text-slate-100/90 md:max-w-4xl">
+                {yearsOfProcess}년간 다듬어온 대량 세탁 및 맞춤형 세탁에 최적화된 공정을 통해 고품질의 세탁 서비스를 제공합니다.
               </p>
-              <p className="mt-2 max-w-3xl text-lg text-slate-100/90 md:max-w-4xl">
-                약속된 시간 내에 수거부터 납품까지 완수해 재고 부담을 해소합니다.
+              <p className="mt-2 max-w-3xl text-xl font-medium text-slate-100/90 md:max-w-4xl">
+                환경 오염과 인체에 유해한 화학 제품을 일절 사용하지 않겠습니다.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a
@@ -101,8 +103,8 @@ export default function Home() {
                 대량 세탁 특화 인프라
               </h2>
               <p className="mt-4 text-slate-600">
-                HS 크린텍 PAROS 50kg·100kg 라인업과 대형 건조기, 50톤 처리 가능한
-                물류 동선을 기반으로 365일 안정적인 세탁을 제공합니다.
+                HS 크린텍 社 프리미엄 최신 세탁기 라인 '파로스(PHAROS) 50kg 모델'
+                대용량 건조기를 보유하고 있으며, 자회사 ㈜내추럴크린 에서 365일 24시간 AS 및 기계를 공급받아 안정적인 세탁 서비스를 제공합니다.
               </p>
               <dl className="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-600">
                 <div>
@@ -118,7 +120,7 @@ export default function Home() {
                   <dd>100% 수돗물, 50톤 처리</dd>
                 </div>
                 <div>
-                  <dt className="font-semibold text-slate-900">물류</dt>
+                  <dt className="font-semibold text-slate-900">입고 차량</dt>
                   <dd>1톤 / 2.5톤 내장탑 차량</dd>
                 </div>
               </dl>

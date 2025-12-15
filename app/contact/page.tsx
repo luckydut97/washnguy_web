@@ -12,8 +12,8 @@ export default function ContactPage() {
             상담 및 제휴 문의
           </h1>
           <p className="text-lg text-slate-600">
-            익일 세탁 서비스와 맞춤형 프로세스를 경험해 보세요. 아래 연락처 또는
-            폼으로 문의를 남겨주시면 담당자가 빠르게 연락드립니다.
+            익일 세탁 서비스와 맞춤형 프로세스를 경험해 보세요. 아래 연락처로 연락주시거나,
+            양식에 문의를 남겨주시면 담당자가 빠르게 연락드리겠습니다.
           </p>
         </header>
       </FadeIn>
@@ -25,23 +25,31 @@ export default function ContactPage() {
             <dl className="mt-6 space-y-4 text-slate-700">
               <div>
                 <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                  PHONE
+                  TEL
                 </dt>
                 <dd className="text-lg font-semibold text-slate-900">
-                  02-000-0000
+                  031-795-4356
+                </dd>
+              </div>
+              <div>
+                <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  MOBILE
+                </dt>
+                <dd className="text-lg font-semibold text-slate-900">
+                  010-4084-4863
                 </dd>
               </div>
               <div>
                 <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">
                   EMAIL
                 </dt>
-                <dd>contact@washnguy.co.kr</dd>
+                <dd>kwoongs80@daum.net</dd>
               </div>
               <div>
                 <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">
                   ADDRESS
                 </dt>
-                <dd>경기도 남양주 워시앤가이 본사</dd>
+                <dd>경기도 하남시 덕풍동 250-5</dd>
               </div>
               <div>
                 <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">
@@ -98,7 +106,7 @@ export default function ContactPage() {
         <section className="rounded-3xl border border-slate-200 bg-white shadow-sm">
           <iframe
             title="워시앤가이 위치"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.6997020500624!2d127.1054324!3d37.5207999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca55a963c2e17%3A0xd3642f7bba7d6857!2z7ISc7Jq47Yq567OE7IucIOyVhO2KuA!5e0!3m2!1sko!2skr!4v1715670000000!5m2!1sko!2skr"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.0195330646616!2d127.2106403!3d37.5124224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5f5f2e57aed3%3A0xf339c7efda7a6b6d!2z6rK96riw64KYIO2VnOyduO2VhOyEnCDqtJHthrXquLggMjUwLTU!5e0!3m2!1sko!2skr!4v1736220000000!5m2!1sko!2skr"
             className="h-72 w-full rounded-3xl"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
