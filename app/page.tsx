@@ -32,6 +32,8 @@ const clientLogos = [
   { src: "/company_logo_5.png", alt: "Company Logo 5" },
   { src: "/company_logo_1.png", alt: "Company Logo 6" },
   { src: "/company_logo_7.png", alt: "Company Logo 7" },
+  { src: "/company_logo_8.png", alt: "Company Logo 8" },
+  { src: "/company_logo_9.png", alt: "Company Logo 9" },
 ];
 
 const yearsOfProcess = new Date().getFullYear() - 2013;
@@ -63,7 +65,7 @@ export default function Home() {
                 {yearsOfProcess}년간 다듬어온 대량 세탁 및 맞춤형 세탁에 최적화된 공정을 통해 고품질의 세탁 서비스를 제공합니다.
               </p>
               <p className="mt-2 max-w-3xl text-xl font-medium text-slate-100/90 md:max-w-4xl">
-                환경 오염과 인체에 유해한 화학 제품을 일절 사용하지 않겠습니다.
+                환경 오염과 인체에 유해한 화학 제품을 일절 사용하지 않습니다.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a
@@ -86,27 +88,24 @@ export default function Home() {
 
       <div className="mx-auto max-w-6xl space-y-16 px-4 pb-10 pt-16 md:px-8">
         <FadeIn delay={50}>
-          <section className="grid gap-5 text-center text-slate-900 md:grid-cols-4">
-            {serviceFocuses.map((focus) => (
-              <div
-                key={focus.title}
-                className="flex flex-col items-center gap-4 rounded-3xl border border-slate-200 bg-white px-4 py-6 shadow-sm"
-              >
-                <Image
-                  src={focus.image}
-                  alt={focus.title}
-                  width={160}
-                  height={160}
-                  className="h-32 w-32 rounded-full object-cover"
-                />
-                <div>
-                  <p className="text-lg font-semibold text-slate-900">
+          <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="grid gap-6 md:grid-cols-4">
+              {serviceFocuses.map((focus) => (
+                <div key={focus.title} className="text-center">
+                  <Image
+                    src={focus.image}
+                    alt={focus.title}
+                    width={160}
+                    height={160}
+                    className="mx-auto h-32 w-32 rounded-full object-cover shadow"
+                  />
+                  <p className="mt-3 text-lg font-semibold text-slate-900">
                     {focus.title}
                   </p>
                   <p className="mt-1 text-sm text-slate-600">{focus.description}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </section>
         </FadeIn>
 
@@ -159,7 +158,7 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn delay={200}>
-          <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <section className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.15em] text-blue-600">
               PARTNERS
             </p>
@@ -169,27 +168,28 @@ export default function Home() {
             <p className="mt-3 text-slate-600">
               두산베어스, LG트윈스, NCSOFT, K2, 호반그룹 사내 피트니스 센터 등 다양한 기업 고객과 함께하며 맞춤 프리미엄 세탁 시스템을 운영합니다.
             </p>
-            <div className="relative mt-8 overflow-hidden py-6">
-              <div className="logo-marquee-track flex items-center gap-16">
-                {[...clientLogos, ...clientLogos].map((logo, index) => (
-                  <div
-                    key={`${logo.src}-${index}`}
-                    className="flex h-24 w-32 items-center justify-center opacity-80 transition hover:opacity-100"
-                  >
-                    <Image
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={180}
-                      height={100}
-                      className="h-auto w-full object-contain"
-                      priority={index === 0}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
           </section>
         </FadeIn>
+      </div>
+
+      <div className="relative mt-6 overflow-hidden py-6">
+        <div className="logo-marquee-track flex items-center gap-16">
+          {[...clientLogos, ...clientLogos].map((logo, index) => (
+            <div
+              key={`${logo.src}-${index}`}
+              className="flex h-24 w-32 items-center justify-center opacity-80 transition hover:opacity-100"
+            >
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={180}
+                height={100}
+                className="h-auto w-full object-contain"
+                priority={index === 0}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

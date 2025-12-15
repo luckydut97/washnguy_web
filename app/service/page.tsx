@@ -47,7 +47,7 @@ export default function ServicePage() {
         <section className="grid gap-6 md:grid-cols-2">
           <div className="rounded-3xl border border-blue-200 bg-white p-8 shadow-sm">
             <h2 className="text-2xl font-semibold text-slate-900 uppercase">
-              Basic 7 Steps
+              (기본) Basic 7 Steps
             </h2>
             <p className="mt-3 text-slate-600">
               모든 기업 고객에게 기본으로 제공되는 베이직 라인으로 수거부터 배송
@@ -85,11 +85,11 @@ export default function ServicePage() {
                 </svg>
               </span>
             <h2 className="text-2xl font-semibold text-white uppercase">
-              Premium 4 Steps
+              (추가) Premium 4 Steps
             </h2>
             </div>
             <p className="mt-3 text-slate-100">
-              고급 소재 의류와 VIP 파트너를 위한 전용 라인입니다. 향 지속력과
+              고급 소재 의류와 VIP 파트너를 위한 추가 전용 라인입니다. 향 지속력과
               살균력을 강화해 고객 감동을 실천합니다.
             </p>
             <ol className="mt-6 space-y-3 text-slate-900">
@@ -99,7 +99,7 @@ export default function ServicePage() {
                   className="flex items-center gap-4 rounded-2xl border border-yellow-500/40 bg-white px-4 py-3 text-slate-900"
                 >
                   <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-r from-yellow-400 to-yellow-500 text-sm font-semibold text-white shadow">
-                    {index + 1}
+                    {index + basicSteps.length + 1}
                   </span>
                   <span>{step}</span>
                 </li>
@@ -111,7 +111,7 @@ export default function ServicePage() {
 
       <FadeIn delay={200}>
         <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-semibold text-slate-900">핵심 역량</h2>
+          <h2 className="text-2xl font-semibold text-slate-900">자신있습니다!</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {specialties.map((item) => (
               <div

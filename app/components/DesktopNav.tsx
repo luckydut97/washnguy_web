@@ -59,7 +59,7 @@ export default function DesktopNav({ links }: DesktopNavProps) {
       className="relative flex flex-1 justify-center gap-16 text-base font-semibold tracking-wide"
     >
       <span
-        className="pointer-events-none absolute inset-y-1 rounded-2xl bg-slate-200/80 transition-[left,width,opacity] duration-300 ease-out"
+        className="pointer-events-none absolute inset-y-1 rounded-2xl bg-gradient-to-r from-sky-100 to-blue-100 transition-[left,width,opacity] duration-300 ease-out"
         style={{
           width: indicator.width,
           left: indicator.left,

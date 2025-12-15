@@ -17,7 +17,7 @@ const navLinks = [
   { label: "회사소개", href: "/about" },
   { label: "서비스", href: "/service" },
   { label: "거래처", href: "/clients" },
-  { label: "문의", href: "/contact" },
+  { label: "고객센터", href: "/contact" },
 ];
 
 export const metadata: Metadata = {
