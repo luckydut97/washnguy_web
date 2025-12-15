@@ -38,7 +38,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} bg-slate-50 text-slate-900 antialiased`}
       >
         <div className="flex min-h-screen flex-col">
-          <header className="border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur">
+          <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur">
             <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-8">
               <Link href="/" className="text-lg font-semibold tracking-tight">
                 WASHNGUY

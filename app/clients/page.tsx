@@ -1,3 +1,5 @@
+import FadeIn from "@/app/components/FadeIn";
+
 const partners = [
   {
     name: "두산베어스 프로야구단",
@@ -16,44 +18,50 @@ const partners = [
 export default function ClientsPage() {
   return (
     <div className="space-y-10 pb-10">
-      <header className="space-y-4">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-          거래처
-        </p>
-        <h1 className="text-4xl font-semibold text-slate-900">
-          파트너 & 워시앤가이
-        </h1>
-        <p className="text-lg text-slate-600">
-          프로 스포츠, IT, 제조, 웨딩, 레저 등 대량 세탁이 필요한 다양한 업종과
-          협력하고 있습니다.
-        </p>
-      </header>
+      <FadeIn>
+        <header className="space-y-4">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+            거래처
+          </p>
+          <h1 className="text-4xl font-semibold text-slate-900">
+            파트너 & 워시앤가이
+          </h1>
+          <p className="text-lg text-slate-600">
+            프로 스포츠, IT, 제조, 웨딩, 레저 등 대량 세탁이 필요한 다양한 업종과
+            협력하고 있습니다.
+          </p>
+        </header>
+      </FadeIn>
 
-      <section className="grid gap-6 md:grid-cols-2">
-        {partners.map((partner) => (
-          <div
-            key={partner.name}
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-          >
-            <h2 className="text-xl font-semibold text-slate-900">
-              {partner.name}
-            </h2>
-            <p className="mt-2 text-slate-600">{partner.desc}</p>
-          </div>
-        ))}
-      </section>
+      <FadeIn delay={100}>
+        <section className="grid gap-6 md:grid-cols-2">
+          {partners.map((partner) => (
+            <div
+              key={partner.name}
+              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <h2 className="text-xl font-semibold text-slate-900">
+                {partner.name}
+              </h2>
+              <p className="mt-2 text-slate-600">{partner.desc}</p>
+            </div>
+          ))}
+        </section>
+      </FadeIn>
 
-      <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-        <h2 className="text-2xl font-semibold text-slate-900">주요 업종</h2>
-        <ul className="mt-4 grid gap-3 text-slate-700 md:grid-cols-2">
-          <li>· 야구단 / 스포츠 팀</li>
-          <li>· 피트니스 센터 / 웰니스 시설</li>
-          <li>· 골프장 및 컨트리클럽</li>
-          <li>· 사내 예식장 / 웨딩</li>
-          <li>· 리조트 / 호텔 / 수영장</li>
-          <li>· IT / 제조 / 금융 사무공간</li>
-        </ul>
-      </section>
+      <FadeIn delay={200}>
+        <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <h2 className="text-2xl font-semibold text-slate-900">주요 업종</h2>
+          <ul className="mt-4 grid gap-3 text-slate-700 md:grid-cols-2">
+            <li>· 야구단 / 스포츠 팀</li>
+            <li>· 피트니스 센터 / 웰니스 시설</li>
+            <li>· 골프장 및 컨트리클럽</li>
+            <li>· 사내 예식장 / 웨딩</li>
+            <li>· 리조트 / 호텔 / 수영장</li>
+            <li>· IT / 제조 / 금융 사무공간</li>
+          </ul>
+        </section>
+      </FadeIn>
     </div>
   );
 }
