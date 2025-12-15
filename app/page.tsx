@@ -1,17 +1,37 @@
 import FadeIn from "@/app/components/FadeIn";
+import Image from "next/image";
 
-const strengths = [
-  "향기 나는 탁월한 세탁",
-  "최고급 최신 세탁 기계",
-  "우수한 세탁 품질",
-  "최상의 고객 만족 서비스",
+const serviceFocuses = [
+  {
+    title: "사내 운동 시설",
+    description: "기업 헬스장 · 웰니스 시설 전용 세탁",
+    image: "/type_img_1.png",
+  },
+  {
+    title: "피트니스 센터",
+    description: "피트니스 센터 특화 향·살균 케어",
+    image: "/type_img_2.png",
+  },
+  {
+    title: "스포츠 구단",
+    description: "프로 구단 유니폼 · 장비 대량 세탁",
+    image: "/type_img_3.png",
+  },
+  {
+    title: "골프",
+    description: "골프장 · 리조트 고급 타월 세탁",
+    image: "/type_img_4.png",
+  },
 ];
 
-const industries = [
-  "프로 야구단 유니폼 / 타월류",
-  "피트니스 & 웰니스 센터",
-  "골프장 및 리조트",
-  "정장 / 의류 / 린넨 일괄 세탁",
+const clientLogos = [
+  { src: "/company_logo_6.png", alt: "Company Logo 1" },
+  { src: "/company_logo_2.png", alt: "Company Logo 2" },
+  { src: "/company_logo_3.png", alt: "Company Logo 3" },
+  { src: "/company_logo_4.png", alt: "Company Logo 4" },
+  { src: "/company_logo_5.png", alt: "Company Logo 5" },
+  { src: "/company_logo_1.png", alt: "Company Logo 6" },
+  { src: "/company_logo_7.png", alt: "Company Logo 7" },
 ];
 
 const yearsOfProcess = new Date().getFullYear() - 2013;
@@ -19,7 +39,7 @@ const yearsOfProcess = new Date().getFullYear() - 2013;
 export default function Home() {
   return (
     <div className="w-full">
-      <section className="relative min-h-[85vh] w-full overflow-hidden">
+      <section className="relative min-h-[70vh] w-full overflow-hidden">
         <div
           className="absolute inset-0"
           aria-hidden
@@ -48,38 +68,48 @@ export default function Home() {
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a
                   href="/service"
-                  className="rounded-full bg-blue-600 px-8 py-3 text-center text-white transition hover:bg-blue-500"
+                  className="rounded-full border-2 border-blue-600 bg-blue-600 px-9 py-3 font-semibold text-white transition hover:bg-blue-500"
                 >
                   서비스 살펴보기
                 </a>
                 <a
                   href="/contact"
-                  className="rounded-full border border-white/40 px-8 py-3 text-center font-semibold text-white transition hover:border-blue-200 hover:text-blue-100"
+                  className="rounded-full border-2 border-white/70 px-9 py-3 text-center font-semibold text-white animate-bounce-slow transition hover:border-blue-200 hover:text-blue-100"
                 >
                   상담 요청하기
                 </a>
               </div>
             </div>
           </FadeIn>
-          <div className="bg-transparent px-4 py-6 text-sm font-medium text-slate-900 md:px-8 md:text-base">
-            <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 md:flex-row md:items-stretch">
-              {strengths.map((item) => (
-                <div
-                  key={item}
-                  className="flex flex-1 items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-4 shadow-sm"
-                >
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-blue-50 text-blue-600">
-                    ✓
-                  </span>
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
       <div className="mx-auto max-w-6xl space-y-16 px-4 pb-10 pt-16 md:px-8">
+        <FadeIn delay={50}>
+          <section className="grid gap-5 text-center text-slate-900 md:grid-cols-4">
+            {serviceFocuses.map((focus) => (
+              <div
+                key={focus.title}
+                className="flex flex-col items-center gap-4 rounded-3xl border border-slate-200 bg-white px-4 py-6 shadow-sm"
+              >
+                <Image
+                  src={focus.image}
+                  alt={focus.title}
+                  width={160}
+                  height={160}
+                  className="h-32 w-32 rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-lg font-semibold text-slate-900">
+                    {focus.title}
+                  </p>
+                  <p className="mt-1 text-sm text-slate-600">{focus.description}</p>
+                </div>
+              </div>
+            ))}
+          </section>
+        </FadeIn>
+
         <FadeIn delay={100}>
           <section className="grid gap-6 md:grid-cols-2">
             <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
@@ -104,7 +134,7 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-slate-600">
                 HS 크린텍 社 프리미엄 최신 세탁기 라인 '파로스(PHAROS) 50kg 모델'
-                대용량 건조기를 보유하고 있으며, 자회사 ㈜내추럴크린 에서 365일 24시간 AS 및 기계를 공급받아 안정적인 세탁 서비스를 제공합니다.
+                대용량 건조기를 보유 중이며, 자회사 ㈜내추럴크린 에서 365일 24시간 AS 및 기계를 공급받아 안정적인 세탁 서비스를 제공합니다.
               </p>
               <dl className="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-600">
                 <div>
@@ -130,26 +160,30 @@ export default function Home() {
 
         <FadeIn delay={200}>
           <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.15em] text-blue-600">
-                  INDUSTRIES
-                </p>
-                <h2 className="mt-2 text-3xl font-semibold text-slate-900">
-                  대량 세탁이 필요한 핵심 업종 파트너
-                </h2>
-                <p className="mt-3 text-slate-600">
-                  두산베어스, LG트윈스, NCSOFT, K2 등 다양한 기업 고객과 함께하며
-                  맞춤 세탁 시스템을 운영합니다.
-                </p>
-              </div>
-              <div className="grid gap-3 text-sm font-medium text-slate-700 md:w-80">
-                {industries.map((item) => (
+            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-blue-600">
+              PARTNERS
+            </p>
+            <h2 className="mt-2 text-3xl font-semibold text-slate-900">
+              WASH & GUY 파트너사
+            </h2>
+            <p className="mt-3 text-slate-600">
+              두산베어스, LG트윈스, NCSOFT, K2, 호반그룹 사내 피트니스 센터 등 다양한 기업 고객과 함께하며 맞춤 프리미엄 세탁 시스템을 운영합니다.
+            </p>
+            <div className="relative mt-8 overflow-hidden py-6">
+              <div className="logo-marquee-track flex items-center gap-16">
+                {[...clientLogos, ...clientLogos].map((logo, index) => (
                   <div
-                    key={item}
-                    className="rounded-2xl border border-slate-200 px-4 py-3 text-center"
+                    key={`${logo.src}-${index}`}
+                    className="flex h-24 w-32 items-center justify-center opacity-80 transition hover:opacity-100"
                   >
-                    {item}
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={180}
+                      height={100}
+                      className="h-auto w-full object-contain"
+                      priority={index === 0}
+                    />
                   </div>
                 ))}
               </div>

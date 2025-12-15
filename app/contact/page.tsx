@@ -6,10 +6,10 @@ export default function ContactPage() {
       <FadeIn>
         <header className="space-y-4">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            문의하기
+            고객센터
           </p>
           <h1 className="text-4xl font-semibold text-slate-900">
-            상담 및 제휴 문의
+            무료 견적 문의
           </h1>
           <p className="text-lg text-slate-600">
             익일 세탁 서비스와 맞춤형 프로세스를 경험해 보세요. 아래 연락처로 연락주시거나,

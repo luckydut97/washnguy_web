@@ -45,9 +45,9 @@ export default function ServicePage() {
 
       <FadeIn delay={100}>
         <section className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-slate-900">
-              베이직 7단계
+          <div className="rounded-3xl border border-blue-200 bg-white p-8 shadow-sm">
+            <h2 className="text-2xl font-semibold text-slate-900 uppercase">
+              Basic 7 Steps
             </h2>
             <p className="mt-3 text-slate-600">
               모든 기업 고객에게 기본으로 제공되는 베이직 라인으로 수거부터 배송
@@ -67,21 +67,38 @@ export default function ServicePage() {
               ))}
             </ol>
           </div>
-          <div className="rounded-3xl border border-blue-200 bg-blue-50/70 p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-slate-900">
-              프리미엄 4단계 추가
+          <div className="rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 p-8 shadow-[0_25px_50px_rgba(10,15,35,0.55)]">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-yellow-400/20">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  className="h-6 w-6 text-yellow-300"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 18h16l-1.5-7-4 3-2.5-6-2.5 6-4-3L4 18Z"
+                  />
+                </svg>
+              </span>
+            <h2 className="text-2xl font-semibold text-white uppercase">
+              Premium 4 Steps
             </h2>
-            <p className="mt-3 text-slate-600">
+            </div>
+            <p className="mt-3 text-slate-100">
               고급 소재 의류와 VIP 파트너를 위한 전용 라인입니다. 향 지속력과
               살균력을 강화해 고객 감동을 실천합니다.
             </p>
-            <ol className="mt-6 space-y-3 text-slate-700">
+            <ol className="mt-6 space-y-3 text-slate-900">
               {premiumSteps.map((step, index) => (
                 <li
                   key={step}
-                  className="flex items-center gap-4 rounded-2xl border border-blue-100 bg-white/70 px-4 py-3"
+                  className="flex items-center gap-4 rounded-2xl border border-yellow-500/40 bg-white px-4 py-3 text-slate-900"
                 >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-blue-600 text-sm font-semibold text-white">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-r from-yellow-400 to-yellow-500 text-sm font-semibold text-white shadow">
                     {index + 1}
                   </span>
                   <span>{step}</span>

@@ -4,6 +4,7 @@ import "./globals.css";
 import LanguageToggle from "./components/LanguageToggle";
 import Link from "next/link";
 import DesktopNav from "./components/DesktopNav";
+import Image from "next/image";
 
 const pretendard = localFont({
   src: "./static/fonts/PretendardVariable.woff2",
@@ -13,7 +14,6 @@ const pretendard = localFont({
 });
 
 const navLinks = [
-  { label: "홈", href: "/" },
   { label: "회사소개", href: "/about" },
   { label: "서비스", href: "/service" },
   { label: "거래처", href: "/clients" },
@@ -39,9 +39,17 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col">
           <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur">
             <div className="mx-auto flex max-w-6xl items-center px-4 py-4 md:px-8">
-              <div className="flex flex-1">
-                <Link href="/" className="text-lg font-semibold tracking-tight">
-                  WASH & GUY
+              <div className="flex flex-1 items-center gap-3">
+                <Link href="/" className="flex items-center gap-3">
+                  <Image
+                    src="/washnguy_logo.png"
+                    alt="Wash & Guy Logo"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10"
+                    priority
+                  />
+                  <span className="text-lg font-semibold tracking-tight">WASH & GUY</span>
                 </Link>
               </div>
               <nav className="hidden flex-1 md:flex">
@@ -71,9 +79,19 @@ export default function RootLayout({
           </main>
 
           <footer className="border-t border-slate-200 bg-white py-8 text-sm text-slate-500">
-            <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 md:flex-row md:items-center md:justify-between md:px-8">
-              <p>© {new Date().getFullYear()} WASHNGUY. All Rights Reserved.</p>
-              <p>기업 전문 세탁 대행 | 친환경 프리미엄 케어</p>
+            <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 md:px-8">
+              <div className="flex flex-col gap-2 text-xs text-slate-500 md:flex-row md:flex-wrap md:items-center md:gap-x-4 md:gap-y-1">
+                <span>워시앤가이</span>
+                <span>전화 : 010-4084-4356 (상담시간 24시간)</span>
+                <span>경기도 하남시 덕풍동 250-1 1층</span>
+                <span>대표이사 : 이원상</span>
+                <span>개인정보책임자 : 이원상</span>
+                <span>사업자등록번호 : 105-45-14703</span>
+              </div>
+              <div className="flex flex-col gap-1 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
+                <p>기업 전문 세탁 대행 | 친환경 프리미엄 케어</p>
+                <p>© {new Date().getFullYear()} WASHNGUY. All Rights Reserved.</p>
+              </div>
             </div>
           </footer>
         </div>
