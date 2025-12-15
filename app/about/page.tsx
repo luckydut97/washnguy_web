@@ -1,4 +1,5 @@
 import FadeIn from "@/app/components/FadeIn";
+import Image from "next/image";
 
 const promises = [
   "기업과의 약속을 지키며 정도를 걷습니다.",
@@ -65,6 +66,18 @@ export default function AboutPage() {
             서비스를 제공하기 위해 끊임없이 연구하고 전진합니다.
           </p>
         </header>
+      </FadeIn>
+
+      <FadeIn delay={50}>
+        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+          <Image
+            src="/factory_img.png"
+            alt="워시앤가이 공장 전경"
+            width={1200}
+            height={600}
+            className="h-full w-full object-cover"
+          />
+        </section>
       </FadeIn>
 
       <FadeIn delay={100}>

@@ -49,7 +49,7 @@ export default function ContactPage() {
                 <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">
                   ADDRESS
                 </dt>
-                <dd>경기도 하남시 덕풍동 250-5</dd>
+                <dd>경기도 하남시 덕풍동 250-5 (H625+73 하남시 경기도)</dd>
               </div>
               <div>
                 <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">
@@ -103,14 +103,37 @@ export default function ContactPage() {
       </FadeIn>
 
       <FadeIn delay={200}>
-        <section className="rounded-3xl border border-slate-200 bg-white shadow-sm">
-          <iframe
-            title="워시앤가이 위치"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.0195330646616!2d127.2106403!3d37.5124224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5f5f2e57aed3%3A0xf339c7efda7a6b6d!2z6rK96riw64KYIO2VnOyduO2VhOyEnCDqtJHthrXquLggMjUwLTU!5e0!3m2!1sko!2skr!4v1736220000000!5m2!1sko!2skr"
-            className="h-72 w-full rounded-3xl"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+          <div className="relative h-80 w-full">
+            <iframe
+              title="워시앤가이 위치"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.910337707905!2d127.205537!3d37.5506744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b9cac23f39b75%3A0x0!2z6rK96riw64KYIO2VnOyduO2VhOyEnCDrsKntmLjroZw!5e0!3m2!1sko!2skr!4v1736229999999!5m2!1sko!2skr"
+              className="h-full w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="group relative cursor-pointer">
+                <a
+                  href="https://www.google.com/maps?q=%EA%B2%BD%EA%B8%B0%EB%8F%84+%ED%95%98%EB%82%A8%EC%8B%9C+%EB%8D%95%ED%92%8D%EB%8F%99+250-5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="h-12 w-12 text-red-500 drop-shadow-lg transition group-hover:scale-105"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z" />
+                  </svg>
+                </a>
+                <div className="pointer-events-none absolute left-1/2 top-12 hidden w-64 -translate-x-1/2 flex items-center justify-center rounded-xl bg-white/95 px-4 py-2 text-center text-[11px] text-slate-600 shadow group-hover:flex">
+                  경기도 하남시 덕풍동 250-5
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </FadeIn>
     </div>
