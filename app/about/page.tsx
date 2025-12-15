@@ -24,7 +24,7 @@ const promises = [
 
 export default function AboutPage() {
   return (
-    <div className="space-y-12 pb-10">
+    <div className="mx-auto max-w-6xl space-y-12 px-4 pb-10 pt-10 md:px-8">
       <FadeIn>
         <header className="space-y-4">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">

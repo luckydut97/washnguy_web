@@ -16,51 +16,55 @@ const industries = [
 
 export default function Home() {
   return (
-    <div className="space-y-16 pb-8">
-      <FadeIn>
-        <section className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url(/home_background_img.png)" }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent" />
-          <div className="relative px-6 py-16 text-white md:px-12 md:py-20">
-            <p className="text-base font-bold uppercase tracking-[0.25em] text-white md:text-lg">
-              기업 전문 세탁 대행
-            </p>
-            <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight md:max-w-5xl md:text-5xl">
-              의류는 물론, 고객의 마음까지 깨끗하게
-              <br className="hidden md:block" />
-              프리미엄 세탁 서비스{" "}
-              <span className="text-white text-5xl md:text-6xl"></span>
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg text-slate-100 md:max-w-4xl">
-              대량 세탁 특화와 친환경 프로세스를 결합해 기업 고객만을 위한 맞춤형 세탁 솔루션을 제공합니다.
-            </p>
-            <p className="mt-2 max-w-3xl text-lg text-slate-100 md:max-w-4xl">
-              약속된 시간 내에 수거부터 납품까지 완수해 재고 부담을 해소합니다.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="/service"
-                className="rounded-full bg-blue-600 px-8 py-3 text-center text-white transition hover:bg-blue-500"
-              >
-                서비스 살펴보기
-              </a>
-              <a
-                href="/contact"
-                className="rounded-full border border-white/40 px-8 py-3 text-center font-semibold text-white transition hover:border-blue-200 hover:text-blue-100"
-              >
-                상담 요청하기
-              </a>
+    <div className="w-full">
+      <section className="relative min-h-screen w-full overflow-hidden">
+        <div
+          className="absolute inset-0"
+          aria-hidden
+        >
+          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url(/home_background_img.png)" }} />
+          <div className="absolute inset-0 bg-slate-900/40" />
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
+        </div>
+        <div className="relative z-10 flex h-full flex-col">
+          <FadeIn>
+            <div className="mx-auto flex h-full w-full max-w-6xl flex-1 flex-col justify-center px-4 py-16 text-white md:px-8 lg:py-24">
+              <p className="text-base font-bold uppercase tracking-[0.25em] text-white/90 md:text-lg">
+                기업 전문 세탁 대행
+              </p>
+              <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight md:max-w-5xl md:text-5xl">
+                의류는 물론, 고객의 마음까지 깨끗하게
+                <br className="hidden md:block" />
+                프리미엄 세탁 서비스
+              </h1>
+              <p className="mt-6 max-w-3xl text-lg text-slate-100/90 md:max-w-4xl">
+                대량 세탁 특화와 친환경 프로세스를 결합해 기업 고객만을 위한 맞춤형 세탁 솔루션을 제공합니다.
+              </p>
+              <p className="mt-2 max-w-3xl text-lg text-slate-100/90 md:max-w-4xl">
+                약속된 시간 내에 수거부터 납품까지 완수해 재고 부담을 해소합니다.
+              </p>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href="/service"
+                  className="rounded-full bg-blue-600 px-8 py-3 text-center text-white transition hover:bg-blue-500"
+                >
+                  서비스 살펴보기
+                </a>
+                <a
+                  href="/contact"
+                  className="rounded-full border border-white/40 px-8 py-3 text-center font-semibold text-white transition hover:border-blue-200 hover:text-blue-100"
+                >
+                  상담 요청하기
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="relative z-10 rounded-b-3xl border-t border-white/20 bg-white px-6 py-8 text-sm font-medium text-slate-600 md:px-12 md:text-base">
-            <div className="flex flex-col gap-4 md:flex-row">
+          </FadeIn>
+          <div className="bg-transparent px-4 py-6 text-sm font-medium text-slate-900 md:px-8 md:text-base">
+            <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 md:flex-row md:items-stretch">
               {strengths.map((item) => (
                 <div
                   key={item}
-                  className="flex flex-1 items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm"
+                  className="flex flex-1 items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-4 shadow-sm"
                 >
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-blue-50 text-blue-600">
                     ✓
@@ -70,85 +74,87 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
-      </FadeIn>
+        </div>
+      </section>
 
-      <FadeIn delay={100}>
-        <section className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-slate-900">
-              고객과의 약속
-            </h2>
-            <p className="mt-4 text-slate-600">
-              천천히 한 걸음씩 정도를 지키며 기업 파트너와의 신뢰를 최우선으로
-              합니다. 환경과 인체에 유해한 화학 제품을 배제하고 친환경 세제만을
-              사용합니다.
-            </p>
-            <ul className="mt-6 space-y-3 text-slate-700">
-              <li>· 맞춤 세탁 시간 배정으로 익일 납품</li>
-              <li>· 세탁 품질과 향기를 유지하는 전 과정 관리</li>
-              <li>· 거래처 특성에 맞춘 세심한 대응</li>
-              <li>· 눈앞의 이익보다 장기 신뢰를 추구</li>
-            </ul>
-          </div>
-          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-slate-900">
-              대량 세탁 특화 인프라
-            </h2>
-            <p className="mt-4 text-slate-600">
-              HS 크린텍 PAROS 50kg·100kg 라인업과 대형 건조기, 50톤 처리 가능한
-              물류 동선을 기반으로 365일 안정적인 세탁을 제공합니다.
-            </p>
-            <dl className="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-600">
-              <div>
-                <dt className="font-semibold text-slate-900">운영</dt>
-                <dd>월~토 주/야 교대</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-slate-900">설비</dt>
-                <dd>세탁기 50~100kg, 건조기 50~80kg</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-slate-900">물 공급</dt>
-                <dd>100% 수돗물, 50톤 처리</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-slate-900">물류</dt>
-                <dd>1톤 / 2.5톤 내장탑 차량</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-      </FadeIn>
-
-      <FadeIn delay={200}>
-        <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-blue-600">
-                INDUSTRIES
-              </p>
-              <h2 className="mt-2 text-3xl font-semibold text-slate-900">
-                대량 세탁이 필요한 핵심 업종 파트너
+      <div className="mx-auto max-w-6xl space-y-16 px-4 pb-10 pt-16 md:px-8">
+        <FadeIn delay={100}>
+          <section className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+              <h2 className="text-2xl font-semibold text-slate-900">
+                고객과의 약속
               </h2>
-              <p className="mt-3 text-slate-600">
-                두산베어스, LG트윈스, NCSOFT, K2 등 다양한 기업 고객과 함께하며
-                맞춤 세탁 시스템을 운영합니다.
+              <p className="mt-4 text-slate-600">
+                천천히 한 걸음씩 정도를 지키며 기업 파트너와의 신뢰를 최우선으로
+                합니다. 환경과 인체에 유해한 화학 제품을 배제하고 친환경 세제만을
+                사용합니다.
               </p>
+              <ul className="mt-6 space-y-3 text-slate-700">
+                <li>· 맞춤 세탁 시간 배정으로 익일 납품</li>
+                <li>· 세탁 품질과 향기를 유지하는 전 과정 관리</li>
+                <li>· 거래처 특성에 맞춘 세심한 대응</li>
+                <li>· 눈앞의 이익보다 장기 신뢰를 추구</li>
+              </ul>
             </div>
-            <div className="grid gap-3 text-sm font-medium text-slate-700 md:w-80">
-              {industries.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-slate-200 px-4 py-3 text-center"
-                >
-                  {item}
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+              <h2 className="text-2xl font-semibold text-slate-900">
+                대량 세탁 특화 인프라
+              </h2>
+              <p className="mt-4 text-slate-600">
+                HS 크린텍 PAROS 50kg·100kg 라인업과 대형 건조기, 50톤 처리 가능한
+                물류 동선을 기반으로 365일 안정적인 세탁을 제공합니다.
+              </p>
+              <dl className="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-600">
+                <div>
+                  <dt className="font-semibold text-slate-900">운영</dt>
+                  <dd>월~토 주/야 교대</dd>
                 </div>
-              ))}
+                <div>
+                  <dt className="font-semibold text-slate-900">설비</dt>
+                  <dd>세탁기 50~100kg, 건조기 50~80kg</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-slate-900">물 공급</dt>
+                  <dd>100% 수돗물, 50톤 처리</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-slate-900">물류</dt>
+                  <dd>1톤 / 2.5톤 내장탑 차량</dd>
+                </div>
+              </dl>
             </div>
-          </div>
-        </section>
-      </FadeIn>
+          </section>
+        </FadeIn>
+
+        <FadeIn delay={200}>
+          <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.15em] text-blue-600">
+                  INDUSTRIES
+                </p>
+                <h2 className="mt-2 text-3xl font-semibold text-slate-900">
+                  대량 세탁이 필요한 핵심 업종 파트너
+                </h2>
+                <p className="mt-3 text-slate-600">
+                  두산베어스, LG트윈스, NCSOFT, K2 등 다양한 기업 고객과 함께하며
+                  맞춤 세탁 시스템을 운영합니다.
+                </p>
+              </div>
+              <div className="grid gap-3 text-sm font-medium text-slate-700 md:w-80">
+                {industries.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-slate-200 px-4 py-3 text-center"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </FadeIn>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import FadeIn from "@/app/components/FadeIn";
 
 export default function ContactPage() {
   return (
-    <div className="space-y-10 pb-10">
+    <div className="mx-auto max-w-6xl space-y-10 px-4 pb-10 pt-10 md:px-8">
       <FadeIn>
         <header className="space-y-4">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
@@ -54,24 +54,33 @@ export default function ContactPage() {
           <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
             <h2 className="text-2xl font-semibold text-slate-900">문의 폼</h2>
             <form className="mt-6 space-y-4">
-              <input
-                className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none"
-                placeholder="회사명"
-                type="text"
-              />
-              <input
-                className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none"
-                placeholder="담당자 이름"
-                type="text"
-              />
-              <input
-                className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none"
-                placeholder="연락처 또는 이메일"
-                type="text"
-              />
+              <div className="grid gap-4 md:grid-cols-2">
+                <input
+                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none"
+                  placeholder="회사명"
+                  type="text"
+                />
+                <input
+                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none"
+                  placeholder="담당자 이름"
+                  type="text"
+                />
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                <input
+                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none"
+                  placeholder="연락처"
+                  type="text"
+                />
+                <input
+                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none"
+                  placeholder="이메일"
+                  type="email"
+                />
+              </div>
               <textarea
-                className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none"
-                rows={4}
+                className="w-full rounded-3xl border border-slate-200 px-4 py-4 text-sm focus:border-blue-500 focus:outline-none"
+                rows={6}
                 placeholder="문의 내용을 작성해주세요."
               />
               <button
