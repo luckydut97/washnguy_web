@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import LanguageToggle from "./components/LanguageToggle";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const pretendard = localFont({
+  src: "./static/fonts/PretendardVariable.woff2",
+  weight: "45 920",
+  display: "swap",
+  variable: "--font-pretendard",
 });
 
 const navLinks = [
@@ -35,31 +33,30 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-slate-50 text-slate-900 antialiased`}
+        className={`${pretendard.variable} bg-slate-50 text-slate-900 antialiased`}
       >
         <div className="flex min-h-screen flex-col">
           <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-8">
-              <Link href="/" className="text-lg font-semibold tracking-tight">
-                WASHNGUY
-              </Link>
-              <nav className="hidden gap-6 text-sm font-medium md:flex">
+            <div className="mx-auto flex max-w-6xl items-center px-4 py-4 md:px-8">
+              <div className="flex flex-1">
+                <Link href="/" className="text-lg font-semibold tracking-tight">
+                  WASH & GUY
+                </Link>
+              </div>
+              <nav className="hidden flex-1 justify-center gap-16 text-base font-semibold tracking-wide md:flex">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="transition hover:text-blue-600"
+                    className="whitespace-nowrap transition hover:text-blue-600"
                   >
                     {link.label}
                   </Link>
                 ))}
               </nav>
-              <a
-                href="tel:0260000000"
-                className="hidden rounded-full border border-blue-600 px-5 py-2 text-sm font-semibold text-blue-600 transition hover:bg-blue-600 hover:text-white lg:inline-block"
-              >
-                상담 문의
-              </a>
+              <div className="hidden flex-1 justify-end md:flex">
+                <LanguageToggle />
+              </div>
             </div>
             <div className="px-4 pb-4 md:hidden">
               <nav className="flex flex-wrap gap-3 text-sm font-medium">

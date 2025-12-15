@@ -18,45 +18,57 @@ export default function Home() {
   return (
     <div className="space-y-16 pb-8">
       <FadeIn>
-        <section className="hero-sheen rounded-3xl border border-slate-200 px-6 py-12 shadow-sm md:px-12 md:py-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            기업 전문 세탁 대행
-          </p>
-          <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
-            POWER OFFER 프리미엄 세탁 서비스로 고객 감동을 실천하는
-            <span className="text-blue-600"> 워시앤가이</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-slate-600">
-            대량 세탁 특화와 친환경 프로세스를 결합해 기업 고객만을 위한 맞춤형
-            세탁 솔루션을 제공합니다. 약속된 시간 내에 수거부터 납품까지 완수해
-            재고 부담을 해소합니다.
-          </p>
-          <div className="mt-8 flex flex-col gap-4 text-sm font-medium text-slate-600 md:flex-row md:text-base">
-            {strengths.map((item) => (
-              <div
-                key={item}
-                className="flex flex-1 items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm"
+        <section className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url(/home_background_img.png)" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent" />
+          <div className="relative px-6 py-16 text-white md:px-12 md:py-20">
+            <p className="text-base font-bold uppercase tracking-[0.25em] text-white md:text-lg">
+              기업 전문 세탁 대행
+            </p>
+            <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight md:max-w-5xl md:text-5xl">
+              의류는 물론, 고객의 마음까지 깨끗하게
+              <br className="hidden md:block" />
+              프리미엄 세탁 서비스{" "}
+              <span className="text-white text-5xl md:text-6xl"></span>
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg text-slate-100 md:max-w-4xl">
+              대량 세탁 특화와 친환경 프로세스를 결합해 기업 고객만을 위한 맞춤형 세탁 솔루션을 제공합니다.
+            </p>
+            <p className="mt-2 max-w-3xl text-lg text-slate-100 md:max-w-4xl">
+              약속된 시간 내에 수거부터 납품까지 완수해 재고 부담을 해소합니다.
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="/service"
+                className="rounded-full bg-blue-600 px-8 py-3 text-center text-white transition hover:bg-blue-500"
               >
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-blue-50 text-blue-600">
-                  ✓
-                </span>
-                <span>{item}</span>
-              </div>
-            ))}
+                서비스 살펴보기
+              </a>
+              <a
+                href="/contact"
+                className="rounded-full border border-white/40 px-8 py-3 text-center font-semibold text-white transition hover:border-blue-200 hover:text-blue-100"
+              >
+                상담 요청하기
+              </a>
+            </div>
           </div>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <a
-              href="/service"
-              className="rounded-full bg-blue-600 px-8 py-3 text-center text-white transition hover:bg-blue-500"
-            >
-              서비스 살펴보기
-            </a>
-            <a
-              href="/contact"
-              className="rounded-full border border-slate-300 px-8 py-3 text-center font-semibold text-slate-700 transition hover:border-blue-500 hover:text-blue-600"
-            >
-              상담 요청하기
-            </a>
+          <div className="relative z-10 rounded-b-3xl border-t border-white/20 bg-white px-6 py-8 text-sm font-medium text-slate-600 md:px-12 md:text-base">
+            <div className="flex flex-col gap-4 md:flex-row">
+              {strengths.map((item) => (
+                <div
+                  key={item}
+                  className="flex flex-1 items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm"
+                >
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-blue-50 text-blue-600">
+                    ✓
+                  </span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </FadeIn>
