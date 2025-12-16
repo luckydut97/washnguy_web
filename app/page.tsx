@@ -1,5 +1,7 @@
 import FadeIn from "@/app/components/FadeIn";
 import Image from "next/image";
+import { getPartners } from "@/lib/notion";
+import { defaultPartners } from "@/lib/defaultPartners";
 
 const serviceFocuses = [
   {
@@ -28,21 +30,25 @@ const serviceFocuses = [
   },
 ];
 
-const clientLogos = [
-  { src: "/company_logo_6.png", alt: "Company Logo 1" },
-  { src: "/company_logo_2.png", alt: "Company Logo 2" },
-  { src: "/company_logo_3.png", alt: "Company Logo 3" },
-  { src: "/company_logo_4.png", alt: "Company Logo 4" },
-  { src: "/company_logo_5.png", alt: "Company Logo 5" },
-  { src: "/company_logo_1.png", alt: "Company Logo 6" },
-  { src: "/company_logo_7.png", alt: "Company Logo 7" },
-  { src: "/company_logo_8.png", alt: "Company Logo 8" },
-  { src: "/company_logo_9.png", alt: "Company Logo 9" },
-];
-
 const yearsOfProcess = new Date().getFullYear() - 2013;
 
-export default function Home() {
+export default async function Home() {
+  const notionPartners = await getPartners();
+  const notionLogos = notionPartners
+    .filter((partner) => Boolean(partner.logo))
+    .map((partner, index) => ({
+      src: partner.logo as string,
+      alt: partner.name || `파트너 ${index + 1}`,
+    }));
+
+  const clientLogos =
+    notionLogos.length > 0
+      ? notionLogos
+      : defaultPartners.map((partner) => ({
+          src: partner.logo,
+          alt: partner.name,
+        }));
+
   return (
     <div className="w-full">
       <section className="relative min-h-[70vh] w-full overflow-hidden">
