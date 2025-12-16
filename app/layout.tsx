@@ -95,11 +95,11 @@ export default function RootLayout({
             <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 md:px-8">
               <div className="flex flex-col gap-2 text-xs text-slate-500 md:flex-row md:flex-wrap md:items-center md:gap-x-4 md:gap-y-1">
                 <span>워시앤가이</span>
-                <span>전화 : 010-4084-4356 (상담시간 24시간)</span>
-                <span>경기도 하남시 덕풍동 250-1 1층</span>
-                <span>대표이사 : 이원상</span>
-                <span>개인정보책임자 : 이원상</span>
-                <span>사업자등록번호 : 105-45-14703</span>
+                <span>Mobile: 010-4084-4356 (상담시간 24시간)</span>
+                <span>Address: 경기도 하남시 덕풍동 250-1 1층</span>
+                <span>대표이사: 이원상</span>
+                <span>개인정보책임자: 이원상</span>
+                <span>사업자등록번호: 105-45-14703</span>
               </div>
               <div className="flex flex-col gap-1 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
                 <p>기업 전문 세탁 대행 | 친환경 프리미엄 케어</p>
