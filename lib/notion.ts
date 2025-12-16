@@ -56,11 +56,16 @@ export async function getPartners(): Promise<NotionPartner[]> {
       };
     });
 
-    return partners.sort((a, b) => {
-      const orderA = a.order ?? Number.MAX_SAFE_INTEGER;
-      const orderB = b.order ?? Number.MAX_SAFE_INTEGER;
-      return orderA - orderB;
-    });
+    return partners.sort(
+      (
+        a: { order?: number },
+        b: { order?: number }
+      ) => {
+        const orderA = a.order ?? Number.MAX_SAFE_INTEGER;
+        const orderB = b.order ?? Number.MAX_SAFE_INTEGER;
+        return orderA - orderB;
+      }
+    );
   } catch (error) {
     console.error("Notion API error:", error);
     return [];
