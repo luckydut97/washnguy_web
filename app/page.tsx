@@ -74,7 +74,7 @@ export default function Home() {
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a
                   href="/service"
-                  className="rounded-full border-2 border-blue-600 bg-blue-600 px-9 py-3 font-semibold text-white transition hover:bg-blue-500"
+                  className="rounded-full border-2 border-blue-600 bg-blue-600 px-9 py-3 text-center font-semibold text-white transition hover:bg-blue-500"
                 >
                   서비스 살펴보기
                 </a>
