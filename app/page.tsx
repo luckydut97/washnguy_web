@@ -3,23 +3,27 @@ import Image from "next/image";
 
 const serviceFocuses = [
   {
-    title: "사내 운동 시설",
-    description: "기업 헬스장 · 웰니스 시설 전용 세탁",
+    titleEnglish: "HEALTH",
+    title: "기업 사내 휘트니스",
+    description: "사내 헬스장·웰니스 시설 대량 세탁",
     image: "/type_img_1.png",
   },
   {
-    title: "피트니스 센터",
-    description: "피트니스 센터 특화 향·살균 케어",
+    titleEnglish: "FITNESS",
+    title: "스포츠 체육시설",
+    description: "피트니스 센터 특화 향·살균 공정",
     image: "/type_img_2.png",
   },
   {
-    title: "스포츠 구단",
-    description: "프로 구단 유니폼 · 장비 대량 세탁",
+    titleEnglish: "SPORTS TEAM",
+    title: "프로 구단",
+    description: "각 구단 유니폼·장비 대량 세탁",
     image: "/type_img_3.png",
   },
   {
-    title: "골프",
-    description: "골프장 · 리조트 고급 타월 세탁",
+    titleEnglish: "GOLF",
+    title: "고급 골프 & 리조트",
+    description: "클럽하우스·코스 운영 타월 세탁",
     image: "/type_img_4.png",
   },
 ];
@@ -88,24 +92,30 @@ export default function Home() {
 
       <div className="mx-auto max-w-6xl space-y-16 px-4 pb-10 pt-16 md:px-8">
         <FadeIn delay={50}>
-          <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-            <div className="grid gap-6 md:grid-cols-4">
-              {serviceFocuses.map((focus) => (
-                <div key={focus.title} className="text-center">
-                  <Image
-                    src={focus.image}
-                    alt={focus.title}
-                    width={160}
-                    height={160}
-                    className="mx-auto h-32 w-32 rounded-full object-cover shadow"
-                  />
-                  <p className="mt-3 text-lg font-semibold text-slate-900">
-                    {focus.title}
+          <section className="grid gap-6 md:grid-cols-4">
+            {serviceFocuses.map((focus) => (
+              <div
+                key={focus.title}
+                className="group relative overflow-hidden rounded-3xl shadow-lg"
+              >
+                <Image
+                  src={focus.image}
+                  alt={focus.title}
+                  width={400}
+                  height={360}
+                  className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-left text-white">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+                    {focus.titleEnglish}
                   </p>
-                  <p className="mt-1 text-sm text-slate-600">{focus.description}</p>
+                  <p className="mt-2 text-xl font-semibold">{focus.title}</p>
+                  <p className="mt-1 text-sm text-white/80">{focus.description}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </section>
         </FadeIn>
 

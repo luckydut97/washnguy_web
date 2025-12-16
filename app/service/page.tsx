@@ -1,4 +1,5 @@
 import FadeIn from "@/app/components/FadeIn";
+import Image from "next/image";
 
 const basicSteps = [
   "세탁물 수거",
@@ -18,10 +19,35 @@ const premiumSteps = [
 ];
 
 const specialties = [
-  "PAROS 프리미엄 최신 세탁기 라인 (50kg / 100kg)",
-  "대량 세탁 특화 드라이 클리닝",
-  "유니폼, 타월, 린넨까지 통합 처리",
-  "업종별 맞춤 라벨링 & 포장",
+  {
+    tag: "MASS BATCH",
+    title: "대량 일괄 세탁",
+    description: "200벌 이상의 대량 배치도 일정 품질로 처리합니다.",
+    icon: "/service_img_1.svg",
+    accent: "bg-slate-100 text-slate-800",
+  },
+  {
+    tag: "PERSONALIZED",
+    title: "맞춤 라벨 & 포장",
+    description: "개별 맞춤 라벨링·포장으로 혼선 없이 정확히 배송합니다.",
+    icon: "/service_img_2.svg",
+    accent: "bg-emerald-50 text-emerald-600",
+  },
+  {
+    tag: "SENSITIVE CARE",
+    title: "섬세한 소재 케어",
+    description:
+      "고급 소재와 VIP 유니폼을 위한 섬세한 온도·압력 프로파일을 적용합니다.",
+    icon: "/service_img_3.svg",
+    accent: "bg-sky-50 text-sky-600",
+  },
+  {
+    tag: "24H RESPONSE",
+    title: "24시간 응답",
+    description: "야간·주말 수거 및 익일 배송으로 재고 부담을 줄입니다.",
+    icon: "/service_img_4.svg",
+    accent: "bg-amber-50 text-amber-600",
+  },
 ];
 
 export default function ServicePage() {
@@ -30,7 +56,7 @@ export default function ServicePage() {
       <FadeIn>
         <header className="space-y-4">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            서비스 소개
+            Service
           </p>
           <h1 className="text-4xl font-semibold text-slate-900">
             BASIC & PREMIUM LINE
@@ -67,15 +93,16 @@ export default function ServicePage() {
               ))}
             </ol>
           </div>
-          <div className="rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 p-8 shadow-[0_25px_50px_rgba(10,15,35,0.55)]">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-yellow-400/20">
+          <div className="relative overflow-hidden rounded-3xl border border-yellow-200 bg-gradient-to-br from-amber-200 via-yellow-100 to-yellow-300 p-8 shadow-[0_25px_50px_rgba(255,191,0,0.35)]">
+            <div className="premium-shimmer absolute inset-0 opacity-30" />
+            <div className="relative flex items-center gap-3">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-amber-500 shadow-inner">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.8"
-                  className="h-6 w-6 text-yellow-300"
+                  className="h-6 w-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -84,19 +111,19 @@ export default function ServicePage() {
                   />
                 </svg>
               </span>
-            <h2 className="text-2xl font-semibold text-white uppercase">
-              (추가) Premium 4 Steps
-            </h2>
+              <h2 className="text-2xl font-semibold uppercase text-slate-900">
+                (추가) Premium 4 Steps
+              </h2>
             </div>
-            <p className="mt-3 text-slate-100">
+            <p className="relative mt-3 text-slate-800">
               고급 소재 의류와 VIP 파트너를 위한 추가 전용 라인입니다. 향 지속력과
               살균력을 강화해 고객 감동을 실천합니다.
             </p>
-            <ol className="mt-6 space-y-3 text-slate-900">
+            <ol className="relative mt-6 space-y-3 text-slate-900">
               {premiumSteps.map((step, index) => (
                 <li
                   key={step}
-                  className="flex items-center gap-4 rounded-2xl border border-yellow-500/40 bg-white px-4 py-3 text-slate-900"
+                  className="flex items-center gap-4 rounded-2xl border border-yellow-400/60 bg-white/90 px-4 py-3 text-slate-900 shadow-sm"
                 >
                   <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-r from-yellow-400 to-yellow-500 text-sm font-semibold text-white shadow">
                     {index + basicSteps.length + 1}
@@ -112,13 +139,28 @@ export default function ServicePage() {
       <FadeIn delay={200}>
         <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <h2 className="text-2xl font-semibold text-slate-900">자신있습니다!</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
             {specialties.map((item) => (
               <div
-                key={item}
-                className="rounded-2xl border border-slate-100 bg-slate-50/70 px-6 py-4 text-slate-700"
+                key={item.tag}
+                className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 text-slate-900 shadow-sm"
               >
-                {item}
+                <div className={`flex h-16 w-16 items-center justify-center rounded-full ${item.accent}`}>
+                  <Image
+                    src={item.icon}
+                    alt={item.tag}
+                    width={32}
+                    height={32}
+                    className="h-8 w-8"
+                  />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+                    {item.tag}
+                  </p>
+                  <p className="mt-1 text-lg font-semibold">{item.title}</p>
+                  <p className="mt-1 text-sm text-slate-600">{item.description}</p>
+                </div>
               </div>
             ))}
           </div>

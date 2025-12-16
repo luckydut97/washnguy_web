@@ -2,10 +2,30 @@ import FadeIn from "@/app/components/FadeIn";
 import Image from "next/image";
 
 const promises = [
-  "기업과의 약속을 지키며 정도를 걷습니다.",
-  "환경오염과 유해 화학제품을 배제하고 친환경 세제만 사용합니다.",
-  "맞춤 세탁 시스템으로 거래처의 작은 요구에도 귀 기울입니다.",
-  "단기 이익보다 장기적인 신뢰와 감동을 추구합니다.",
+  {
+    text: "기업과의 약속을 지키며 정도를 걷습니다.",
+    icon: "/promise_img.svg",
+    alt: "약속 아이콘",
+    iconClass: "bg-slate-900/10 text-slate-900",
+  },
+  {
+    text: "환경오염과 유해 화학제품을 배제하고 친환경 세제만 사용합니다.",
+    icon: "/env_img.svg",
+    alt: "친환경 아이콘",
+    iconClass: "bg-emerald-100 text-emerald-600",
+  },
+  {
+    text: "맞춤 세탁 시스템으로 거래처의 작은 요구에도 귀 기울입니다.",
+    icon: "/machine_img.svg",
+    alt: "맞춤 시스템 아이콘",
+    iconClass: "bg-sky-100 text-sky-600",
+  },
+  {
+    text: "단기 이익보다 장기적인 신뢰와 감동을 추구합니다.",
+    icon: "/profit_img.svg",
+    alt: "신뢰 아이콘",
+    iconClass: "bg-gradient-to-r from-amber-200 to-yellow-200 text-amber-700",
+  },
 ];
 
 const milestones = [
@@ -27,26 +47,30 @@ const milestones = [
   },
 ];
 
-const focusSectors = [
+const serviceFocuses = [
   {
-    title: "HEALTH",
-    subtitle: "기업 사내 휘트니스",
+    titleEnglish: "HEALTH",
+    title: "기업 사내 휘트니스",
     description: "사내 헬스장·웰니스 시설 대량 세탁",
+    image: "/type_img_1.png",
   },
   {
-    title: "FITNESS",
-    subtitle: "스포츠 체육시설",
-    description: "피트니스 센터 특화 세탁·살균 공정",
+    titleEnglish: "FITNESS",
+    title: "스포츠 체육시설",
+    description: "피트니스 센터 특화 향·살균 공정",
+    image: "/type_img_2.png",
   },
   {
-    title: "SPORTS TEAM",
-    subtitle: "프로 구단",
+    titleEnglish: "SPORTS TEAM",
+    title: "프로 구단",
     description: "각 구단 유니폼·장비 대량 세탁",
+    image: "/type_img_3.png",
   },
   {
-    title: "GOLF",
-    subtitle: "고급 골프 & 리조트",
+    titleEnglish: "GOLF",
+    title: "고급 골프 & 리조트",
     description: "클럽하우스·코스 운영 타월 세탁",
+    image: "/type_img_4.png",
   },
 ];
 
@@ -56,7 +80,7 @@ export default function AboutPage() {
       <FadeIn>
         <header className="space-y-4">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            회사소개
+            Introduction
           </p>
           <h1 className="text-4xl font-semibold text-slate-900">
             향기 나는 탁월한 세탁, 워시앤가이
@@ -88,10 +112,22 @@ export default function AboutPage() {
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {promises.map((promise) => (
               <div
-                key={promise}
-                className="rounded-2xl border border-slate-100 bg-slate-50/60 px-6 py-5 text-slate-700"
+                key={promise.text}
+                className="flex flex-col items-center rounded-3xl border border-slate-200 bg-white px-6 py-6 text-center text-slate-700 shadow-sm"
               >
-                {promise}
+                <div
+                  className={`flex h-16 w-16 items-center justify-center rounded-full p-3 ${promise.iconClass}`}
+                >
+                  <Image
+                    src={promise.icon}
+                    alt={promise.alt}
+                    width={36}
+                    height={36}
+                  />
+                </div>
+                <p className="mt-4 text-sm font-medium leading-relaxed">
+                  {promise.text}
+                </p>
               </div>
             ))}
           </div>
@@ -101,7 +137,7 @@ export default function AboutPage() {
       <FadeIn delay={200}>
         <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <h2 className="text-2xl font-semibold text-slate-900">
-            공장 면적 및 연혁
+            회사 연혁
           </h2>
           <div className="mt-6 space-y-5">
             {milestones.map((item, index) => (
@@ -121,24 +157,25 @@ export default function AboutPage() {
 
       <FadeIn delay={300}>
         <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            핵심 업종
-          </h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            {focusSectors.map((sector) => (
-              <div
-                key={sector.title}
-                className="flex items-center gap-6 rounded-2xl border border-slate-100 bg-slate-50/70 p-5"
-              >
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-blue-600/10 text-center text-sm font-semibold text-blue-600">
-                  {sector.title}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                    {sector.subtitle}
+          <h2 className="text-2xl font-semibold text-slate-900">핵심 업종</h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-4">
+            {serviceFocuses.map((focus) => (
+              <div key={focus.title} className="group relative overflow-hidden rounded-3xl shadow-md">
+                <Image
+                  src={focus.image}
+                  alt={focus.title}
+                  width={400}
+                  height={360}
+                  className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+                    {focus.titleEnglish}
                   </p>
-                  <p className="mt-1 text-base font-semibold text-slate-900">
-                    {sector.description}
+                  <p className="mt-1 text-lg font-semibold">{focus.title}</p>
+                  <p className="mt-1 text-xs text-white/80">
+                    {focus.description}
                   </p>
                 </div>
               </div>
