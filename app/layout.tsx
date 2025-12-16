@@ -24,6 +24,19 @@ export const metadata: Metadata = {
   title: "워시앤가이 | 기업 전문 세탁 대행",
   description:
     "향기 나는 탁월한 세탁을 제공하는 기업 전문 세탁 대행사 워시앤가이의 공식 홈페이지입니다.",
+  openGraph: {
+    title: "워시앤가이 | 기업 전문 세탁 대행",
+    description:
+      "향기 나는 탁월한 세탁을 제공하는 기업 전문 세탁 대행사 워시앤가이의 공식 홈페이지입니다.",
+    images: [
+      {
+        url: "/home_background_img.png",
+        width: 1200,
+        height: 630,
+        alt: "워시앤가이 메인 배너",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -42,7 +55,7 @@ export default function RootLayout({
               <div className="flex flex-1 items-center gap-3">
                 <Link href="/" className="flex items-center gap-3">
                   <Image
-                    src="/washnguy_logo1.png"
+                    src="/washnguy_logo.png"
                     alt="Wash & Guy Logo"
                     width={40}
                     height={40}
