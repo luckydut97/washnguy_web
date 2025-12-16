@@ -66,10 +66,10 @@ export default function Home() {
                 천천히 한걸음씩 정도를 지키겠습니다.
               </h1>
               <p className="mt-6 max-w-3xl text-xl font-medium text-slate-100/90 md:max-w-4xl">
-                {yearsOfProcess}년간 다듬어온 대량 세탁 및 맞춤형 세탁에 최적화된 공정을 통해 고품질의 세탁 서비스를 제공합니다.
+                {yearsOfProcess}년간 다듬어온 맞춤형 대량 세탁에 최적화된 공정을 통해 프리미엄 세탁 서비스를 제공합니다.
               </p>
               <p className="mt-2 max-w-3xl text-xl font-medium text-slate-100/90 md:max-w-4xl">
-                환경 오염과 인체에 유해한 화학 제품을 일절 사용하지 않습니다.
+                프리미엄 세탁 서비스를 제공합니다.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a
