@@ -92,30 +92,45 @@ export default function Home() {
 
       <div className="mx-auto max-w-6xl space-y-16 px-4 pb-10 pt-16 md:px-8">
         <FadeIn delay={50}>
-          <section className="grid gap-6 md:grid-cols-4">
-            {serviceFocuses.map((focus) => (
-              <div
-                key={focus.title}
-                className="group relative overflow-hidden rounded-3xl shadow-lg"
-              >
-                <Image
-                  src={focus.image}
-                  alt={focus.title}
-                  width={400}
-                  height={360}
-                  className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-left text-white">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
-                    {focus.titleEnglish}
-                  </p>
-                  <p className="mt-2 text-xl font-semibold">{focus.title}</p>
-                  <p className="mt-1 text-sm text-white/80">{focus.description}</p>
+          <section className="space-y-6">
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+                BUSINESS
+              </p>
+              <h2 className="mt-2 text-3xl font-semibold text-slate-900">
+                핵심 업종
+              </h2>
+              <p className="mt-3 text-slate-600">
+                워시앤가이는 다양한 업종에 최적화된 세탁 솔루션을 제공합니다.
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-4">
+              {serviceFocuses.map((focus) => (
+                <div
+                  key={focus.title}
+                  className="group relative overflow-hidden rounded-3xl shadow-lg"
+                >
+                  <Image
+                    src={focus.image}
+                    alt={focus.title}
+                    width={400}
+                    height={360}
+                    className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-left text-white">
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+                      {focus.titleEnglish}
+                    </p>
+                    <p className="mt-2 text-xl font-semibold">{focus.title}</p>
+                    <p className="mt-1 text-sm text-white/80">
+                      {focus.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </section>
         </FadeIn>
 
