@@ -82,7 +82,7 @@ export default function Home() {
                   href="/contact"
                   className="rounded-full border-2 border-white/70 px-9 py-3 text-center font-semibold text-white animate-bounce-slow transition hover:border-blue-200 hover:text-blue-100"
                 >
-                  상담 요청하기
+                  무료 견적 문의
                 </a>
               </div>
             </div>
