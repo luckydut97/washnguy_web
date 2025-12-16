@@ -42,7 +42,7 @@ export default function RootLayout({
               <div className="flex flex-1 items-center gap-3">
                 <Link href="/" className="flex items-center gap-3">
                   <Image
-                    src="/washnguy_logo.png"
+                    src="/washnguy_logo1.png"
                     alt="Wash & Guy Logo"
                     width={40}
                     height={40}
