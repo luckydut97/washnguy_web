@@ -27,16 +27,52 @@ export default function ContactPage() {
                 <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">
                   TEL
                 </dt>
-                <dd className="text-lg font-semibold text-slate-900">
-                  031-795-4356
+                <dd className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+                  <a
+                    href="tel:0317954356"
+                    className="transition hover:text-blue-600"
+                  >
+                    031-795-4356
+                  </a>
+                  <a
+                    href="tel:0317954356"
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-blue-200 bg-white text-blue-600 transition hover:bg-blue-600 hover:text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-4 w-4"
+                    >
+                      <path d="M6.62 10.79a15.91 15.91 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1-.24 12.36 12.36 0 0 0 3.88.62 1 1 0 0 1 1 1V21a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.44a1 1 0 0 1 1 1 12.36 12.36 0 0 0 .62 3.88 1 1 0 0 1-.24 1Z" />
+                    </svg>
+                  </a>
                 </dd>
               </div>
               <div>
                 <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">
                   MOBILE
                 </dt>
-                <dd className="text-lg font-semibold text-slate-900">
-                  010-4084-4863
+                <dd className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+                  <a
+                    href="tel:01040844863"
+                    className="transition hover:text-blue-600"
+                  >
+                    010-4084-4863
+                  </a>
+                  <a
+                    href="tel:01040844863"
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-blue-200 bg-white text-blue-600 transition hover:bg-blue-600 hover:text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-4 w-4"
+                    >
+                      <path d="M6.62 10.79a15.91 15.91 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1-.24 12.36 12.36 0 0 0 3.88.62 1 1 0 0 1 1 1V21a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.44a1 1 0 0 1 1 1 12.36 12.36 0 0 0 .62 3.88 1 1 0 0 1-.24 1Z" />
+                    </svg>
+                  </a>
                 </dd>
               </div>
               <div>

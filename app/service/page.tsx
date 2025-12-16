@@ -145,13 +145,15 @@ export default function ServicePage() {
                 key={item.tag}
                 className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 text-slate-900 shadow-sm"
               >
-                <div className={`flex h-16 w-16 items-center justify-center rounded-full ${item.accent}`}>
+                <div
+                  className={`flex h-16 w-16 items-center justify-center rounded-full ${item.accent}`}
+                >
                   <Image
                     src={item.icon}
                     alt={item.tag}
                     width={32}
                     height={32}
-                    className="h-8 w-8"
+                    className="h-6 w-6"
                   />
                 </div>
                 <div className="text-left">
