@@ -49,27 +49,33 @@ const milestones = [
 
 const serviceFocuses = [
   {
-    titleEnglish: "HEALTH",
-    title: "기업 사내 휘트니스",
-    description: "사내 헬스장·웰니스 시설 대량 세탁",
+    titleEnglish: "SPORTS TEAM",
+    title: "스포츠 구단",
+    description: "각 구단 유니폼·타월류 대량 세탁",
     image: "/type_img_1.png",
   },
   {
     titleEnglish: "FITNESS",
     title: "스포츠 체육시설",
-    description: "피트니스 센터 특화 향·살균 공정",
+    description: "각 센터 타월·운동복·유니폼 대량 세탁",
     image: "/type_img_2.png",
   },
   {
-    titleEnglish: "SPORTS TEAM",
-    title: "프로 구단",
-    description: "각 구단 유니폼·장비 대량 세탁",
+    titleEnglish: "GOLF",
+    title: "골프 & 리조트",
+    description: "타월·유니폼·정장류 대량 세탁",
     image: "/type_img_3.png",
   },
   {
-    titleEnglish: "GOLF",
-    title: "고급 골프 & 리조트",
-    description: "클럽하우스·코스 운영 타월 세탁",
+    titleEnglish: "F&B",
+    title: "F&B 세탁",
+    description: "냅킨·앞치마·주방복 대량 세탁",
+    image: "/type_img_5.png",
+  },
+  {
+    titleEnglish: "ALL",
+    title: "기타 모든 의류",
+    description: "정장·린넨 등 모든 린넨 세탁",
     image: "/type_img_4.png",
   },
 ];
@@ -158,25 +164,30 @@ export default function AboutPage() {
       <FadeIn delay={300}>
         <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <h2 className="text-2xl font-semibold text-slate-900">핵심 업종</h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-4">
+          <div className="mt-6 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
             {serviceFocuses.map((focus) => (
-              <div key={focus.title} className="group relative overflow-hidden rounded-3xl shadow-md">
-                <Image
-                  src={focus.image}
-                  alt={focus.title}
-                  width={400}
-                  height={360}
-                  className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
-                    {focus.titleEnglish}
-                  </p>
-                  <p className="mt-1 text-lg font-semibold">{focus.title}</p>
-                  <p className="mt-1 text-xs text-white/80">
-                    {focus.description}
-                  </p>
+              <div
+                key={focus.title}
+                className="group relative overflow-hidden rounded-3xl shadow-md"
+              >
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src={focus.image}
+                    alt={focus.title}
+                    fill
+                    sizes="(min-width: 1024px) 18vw, (min-width: 768px) 30vw, 90vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+                      {focus.titleEnglish}
+                    </p>
+                    <p className="mt-1 text-lg font-semibold">{focus.title}</p>
+                    <p className="mt-1 text-xs text-white/80">
+                      {focus.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}

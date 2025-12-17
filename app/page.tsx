@@ -5,28 +5,34 @@ import { defaultPartners } from "@/lib/defaultPartners";
 
 const serviceFocuses = [
   {
-    titleEnglish: "HEALTH",
-    title: "기업 사내 휘트니스",
-    description: "사내 헬스장·웰니스 시설 대량 세탁",
+    titleEnglish: "SPORTS TEAM",
+    title: "스포츠 구단",
+    description: "각 구단 유니폼·타월류 대량 세탁",
     image: "/type_img_1.png",
   },
   {
     titleEnglish: "FITNESS",
     title: "스포츠 체육시설",
-    description: "피트니스 센터 특화 향·살균 공정",
+    description: "피트니스 센터 타월·운동복·유니폼 대량 세탁",
     image: "/type_img_2.png",
   },
   {
-    titleEnglish: "SPORTS TEAM",
-    title: "프로 구단",
-    description: "각 구단 유니폼·장비 대량 세탁",
+    titleEnglish: "GOLF",
+    title: "골프 & 리조트",
+    description: "타월·유니폼·정장류 대량 세탁",
     image: "/type_img_3.png",
   },
   {
-    titleEnglish: "GOLF",
-    title: "고급 골프 & 리조트",
-    description: "클럽하우스·코스 운영 타월 세탁",
+    titleEnglish: "F&B",
+    title: "F&B 세탁",
+    description: "냅킨·앞치마·주방복 대량 세탁",
     image: "/type_img_4.png",
+  },
+  {
+    titleEnglish: "ALL",
+    title: "기타 모든 의류",
+    description: "정장·린넨 등 모든 린넨 세탁",
+    image: "/type_img_5.png",
   },
 ];
 
@@ -51,7 +57,7 @@ export default async function Home() {
 
   return (
     <div className="w-full">
-      <section className="relative min-h-[70vh] w-full overflow-hidden">
+      <section className="hero-section relative w-full overflow-hidden">
         <div
           className="absolute inset-0"
           aria-hidden
@@ -96,8 +102,39 @@ export default async function Home() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl space-y-16 px-4 pb-10 pt-16 md:px-8">
+      <div className="mx-auto max-w-6xl space-y-10 px-4 pb-10 pt-12 md:px-8">
         <FadeIn delay={50}>
+          <section className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-blue-600">
+              PARTNERS
+            </p>
+            <h2 className="mt-2 text-3xl font-semibold text-slate-900">
+              WASH & GUY 파트너사
+            </h2>
+          </section>
+        </FadeIn>
+
+        <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 overflow-hidden py-4">
+          <div className="logo-marquee-track flex items-center gap-16 px-4">
+            {[...clientLogos, ...clientLogos].map((logo, index) => (
+              <div
+                key={`${logo.src}-${index}`}
+                className="flex h-24 w-32 items-center justify-center opacity-90 transition hover:opacity-100"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={180}
+                  height={100}
+                  className="h-auto w-full object-contain"
+                  priority={index === 0}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <FadeIn delay={100}>
           <section className="space-y-6">
             <div className="text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
@@ -110,29 +147,30 @@ export default async function Home() {
                 워시앤가이는 다양한 업종에 최적화된 세탁 솔루션을 제공합니다.
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-4">
+            <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
               {serviceFocuses.map((focus) => (
                 <div
                   key={focus.title}
-                  className="group relative overflow-hidden rounded-3xl shadow-lg"
+                  className="group relative h-full overflow-hidden rounded-3xl shadow-lg"
                 >
-                  <Image
-                    src={focus.image}
-                    alt={focus.title}
-                    width={400}
-                    height={360}
-                    className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-left text-white">
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
-                      {focus.titleEnglish}
-                    </p>
-                    <p className="mt-2 text-xl font-semibold">{focus.title}</p>
-                    <p className="mt-1 text-sm text-white/80">
-                      {focus.description}
-                    </p>
+                  <div className="relative aspect-square w-full">
+                    <Image
+                      src={focus.image}
+                      alt={focus.title}
+                      fill
+                      sizes="(min-width: 1024px) 18vw, (min-width: 768px) 30vw, 90vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-left text-white">
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+                        {focus.titleEnglish}
+                      </p>
+                      <p className="mt-2 text-xl font-semibold">{focus.title}</p>
+                      <p className="mt-1 text-sm text-white/80">
+                        {focus.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -140,8 +178,8 @@ export default async function Home() {
           </section>
         </FadeIn>
 
-        <FadeIn delay={100}>
-          <section className="grid gap-6 md:grid-cols-2">
+        <FadeIn delay={150}>
+          <section className="grid gap-6 lg:grid-cols-2">
             <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
               <h2 className="text-2xl font-semibold text-slate-900">
                 고객과의 약속
@@ -188,39 +226,6 @@ export default async function Home() {
           </section>
         </FadeIn>
 
-        <FadeIn delay={200}>
-          <section className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-blue-600">
-              PARTNERS
-            </p>
-            <h2 className="mt-2 text-3xl font-semibold text-slate-900">
-              WASH & GUY 파트너사
-            </h2>
-            <p className="mt-3 text-slate-600">
-              두산베어스, LG트윈스, NCSOFT, K2, 호반그룹 사내 피트니스 센터 등 다양한 기업 고객과 함께하며 맞춤 프리미엄 세탁 시스템을 운영합니다.
-            </p>
-          </section>
-        </FadeIn>
-      </div>
-
-      <div className="relative mt-6 overflow-hidden py-6">
-        <div className="logo-marquee-track flex items-center gap-16">
-          {[...clientLogos, ...clientLogos].map((logo, index) => (
-            <div
-              key={`${logo.src}-${index}`}
-              className="flex h-24 w-32 items-center justify-center opacity-80 transition hover:opacity-100"
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={180}
-                height={100}
-                className="h-auto w-full object-contain"
-                priority={index === 0}
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );
