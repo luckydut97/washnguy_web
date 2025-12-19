@@ -89,11 +89,27 @@ body {
     min-height: 85vh;
   }
   100% {
-    min-height: 63vh;
+    min-height: 65vh;
   }
 }
 
 .hero-section {
-  min-height: 75vh;
+  min-height: 85vh;
   animation: hero-shrink 1.2s ease-out forwards;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#factory-slide-1:checked ~ .factory-slider {
+  transform: translateX(0);
+}
+
+#factory-slide-2:checked ~ .factory-slider {
+  transform: translateX(-100%);
 }

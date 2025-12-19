@@ -85,7 +85,8 @@ export default function ContactPage() {
                   <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">
                     ADDRESS
                   </dt>
-                  <dd>경기도 하남시 덕풍동 250-5 (H625+73 하남시 경기도)</dd>
+                  <dd>제 1공장: 경기도 하남시 덕풍동 250-5 1F</dd>
+                  <dd>제 2공장: 경기도 남양주시 오남읍 양지리 608-7</dd>
                 </div>
                 <div>
                   <dt className="text-sm font-semibold uppercase tracking-wide text-slate-500">

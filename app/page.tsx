@@ -70,12 +70,12 @@ export default async function Home() {
           <FadeIn>
             <div className="mx-auto flex h-full w-full max-w-6xl flex-1 flex-col justify-center px-4 py-16 text-white md:px-8 lg:py-24">
               <p className="text-base font-bold uppercase tracking-[0.25em] text-white/90 md:text-lg">
-                기업 전문 세탁 대행
+                기업 및 호텔 대량세탁 전문
               </p>
               <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight md:max-w-5xl md:text-5xl">
                 품질은 기본, 고객의 만족이 곧 세탁의 완성입니다.
                 <br className="hidden md:block" />
-                천천히 한걸음씩 정도를 지키겠습니다.
+                신뢰를 바탕으로 끊임없이 노력하는 워시앤가이 입니다.
               </h1>
               <p className="mt-6 max-w-3xl text-xl font-medium text-slate-100/90 md:max-w-4xl">
                 {yearsOfProcess}년간 다듬어온 대량 세탁 최적화 공정을 통해 프리미엄 세탁 서비스를 제공합니다.
@@ -185,9 +185,8 @@ export default async function Home() {
                 고객과의 약속
               </h2>
               <p className="mt-4 text-slate-600">
-                천천히 한 걸음씩 정도를 지키며 기업 파트너와의 신뢰를 최우선으로
-                합니다. 환경과 인체에 유해한 화학 제품을 배제하고 친환경 세제만을
-                사용합니다.
+                환경과 인체에 유해한 화학 제품을 배제하고 친환경 세제만을
+                사용합니다. 천천히 한걸음씩 정도를 지키겠습니다.
               </p>
               <ul className="mt-6 space-y-3 text-slate-700">
                 <li>· 맞춤 세탁 시간 배정으로 익일 납품</li>

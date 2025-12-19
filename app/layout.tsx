@@ -21,13 +21,13 @@ const navLinks = [
 ];
 
 export const metadata: Metadata = {
-  title: "워시앤가이 | 기업 전문 세탁 대행",
+  title: "워시앤가이 | 기업 및 호텔 대량세탁 전문 대행",
   description:
-    "향기 나는 탁월한 세탁을 제공하는 기업 전문 세탁 대행사 워시앤가이의 공식 홈페이지입니다.",
+    "향기 나는 탁월한 세탁을 제공하는 기업 및 호텔 대량세탁 전문 대행사 워시앤가이의 공식 홈페이지입니다.",
   openGraph: {
-    title: "워시앤가이 | 기업 전문 세탁 대행",
+    title: "워시앤가이 | 기업 및 호텔 대량세탁 전문 대행",
     description:
-      "향기 나는 탁월한 세탁을 제공하는 기업 전문 세탁 대행사 워시앤가이의 공식 홈페이지입니다.",
+      "향기 나는 탁월한 세탁을 제공하는 기업 및 호텔 대량세탁 전문 대행사 워시앤가이의 공식 홈페이지입니다.",
     images: [
       {
         url: "/home_background_img.png",
@@ -102,7 +102,7 @@ export default function RootLayout({
                 <span>사업자등록번호: 105-45-14703</span>
               </div>
               <div className="flex flex-col gap-1 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
-                <p>기업 전문 세탁 대행 | 친환경 프리미엄 케어</p>
+                <p>기업 및 호텔 대량세탁 전문 대행 | 친환경 프리미엄 케어</p>
                 <p>© {new Date().getFullYear()} WASHNGUY. All Rights Reserved.</p>
               </div>
             </div>

@@ -43,7 +43,7 @@ const milestones = [
   },
   {
     year: "2019",
-    detail: "세탁 사업부 법인 분리, 워시앤가이 90평 규모 독자 설립",
+    detail: "세탁 사업부 분리, 워시앤가이 90평 규모 독자 설립",
   },
 ];
 
@@ -92,7 +92,7 @@ export default function AboutPage() {
             향기 나는 탁월한 세탁, 워시앤가이
           </h1>
           <p className="text-lg text-slate-600">
-            기업 전문 세탁 대행 업체로서 신뢰를 바탕으로 최상의 프리미엄 세탁
+            기업 및 호텔 대량세탁 전문 대행 업체로서 신뢰를 바탕으로 최상의 프리미엄 세탁
             서비스를 제공하기 위해 끊임없이 연구하고 전진합니다.
           </p>
         </header>
@@ -101,7 +101,7 @@ export default function AboutPage() {
       <FadeIn delay={50}>
         <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
           <Image
-            src="/factory_img.png"
+            src="/factory_img_1.png"
             alt="워시앤가이 공장 전경"
             width={1200}
             height={600}
@@ -112,35 +112,79 @@ export default function AboutPage() {
 
       <FadeIn delay={100}>
         <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            기업 철학과 약속
-          </h2>
+          <h2 className="text-2xl font-semibold text-slate-900">운영 인프라</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
-            {promises.map((promise) => (
-              <div
-                key={promise.text}
-                className="flex flex-col items-center rounded-3xl border border-slate-200 bg-white px-6 py-6 text-center text-slate-700 shadow-sm"
-              >
-                <div
-                  className={`flex h-16 w-16 items-center justify-center rounded-full p-3 ${promise.iconClass}`}
-                >
-                  <Image
-                    src={promise.icon}
-                    alt={promise.alt}
-                    width={36}
-                    height={36}
-                  />
+            {[
+              {
+                title: "물류",
+                desc: "50톤 처리 가능한 수돗물 인프라와 1톤 / 2.5톤 내장탑 자체 차량으로 새벽·저녁 수거/납품을 빠르게 수행합니다.",
+                icon: "/logistics.png",
+              },
+              {
+                title: "설비 현황",
+                desc: "HS 크린텍 PAROS 50kg · 100kg 세탁기, 50~80kg 건조기를 다수 보유하며 베이직·프리미엄 라인 전용 설비를 구성했습니다.",
+                icon: "/equipment.png",
+              },
+              {
+                title: "친환경 세제",
+                desc: "친환경 세제 “겔업(gelup)”과 자체 개발 특수 세제를 적용합니다. 고급 샤프란 섬유유연제, 드라이시트, 고압 살균 스팀으로 향과 위생을 동시에 잡았습니다.",
+                icon: "/eco.png",
+              },
+              {
+                title: "운영",
+                desc: "월요일부터 토요일까지 주·야간 운영으로 긴급 상황에도 대응합니다. 자회사 (주)내추럴크릿이 365일 24시간 A/S와 기계 공급을 지원합니다.",
+                icon: "/operation.png",
+              },
+            ].map((item) => (
+              <div key={item.title}>
+                <div className="flex items-center gap-2">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-50">
+                    <Image src={item.icon} alt={item.title} width={18} height={18} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
                 </div>
-                <p className="mt-4 text-sm font-medium leading-relaxed">
-                  {promise.text}
-                </p>
+                <p className="mt-2 text-slate-600">{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
       </FadeIn>
 
-      <FadeIn delay={200}>
+      <FadeIn delay={300}>
+        <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <h2 className="text-2xl font-semibold text-slate-900">핵심 업종</h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
+            {serviceFocuses.map((focus) => (
+                <div
+                    key={focus.title}
+                    className="group relative overflow-hidden rounded-3xl shadow-md"
+                >
+                  <div className="relative aspect-square w-full">
+                    <Image
+                        src={focus.image}
+                        alt={focus.title}
+                        fill
+                        sizes="(min-width: 1024px) 18vw, (min-width: 768px) 30vw, 90vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+                        {focus.titleEnglish}
+                      </p>
+                      <p className="mt-1 text-lg font-semibold">{focus.title}</p>
+                      <p className="mt-1 text-xs text-white/80">
+                        {focus.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            ))}
+          </div>
+        </section>
+      </FadeIn>
+
+      <FadeIn delay={300}>
         <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <h2 className="text-2xl font-semibold text-slate-900">
             회사 연혁
@@ -161,77 +205,32 @@ export default function AboutPage() {
         </section>
       </FadeIn>
 
-      <FadeIn delay={300}>
+      <FadeIn delay={200}>
         <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-semibold text-slate-900">핵심 업종</h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
-            {serviceFocuses.map((focus) => (
-              <div
-                key={focus.title}
-                className="group relative overflow-hidden rounded-3xl shadow-md"
-              >
-                <div className="relative aspect-square w-full">
-                  <Image
-                    src={focus.image}
-                    alt={focus.title}
-                    fill
-                    sizes="(min-width: 1024px) 18vw, (min-width: 768px) 30vw, 90vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
-                      {focus.titleEnglish}
-                    </p>
-                    <p className="mt-1 text-lg font-semibold">{focus.title}</p>
-                    <p className="mt-1 text-xs text-white/80">
-                      {focus.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      </FadeIn>
-
-      <FadeIn delay={400}>
-        <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-semibold text-slate-900">운영 인프라</h2>
+          <h2 className="text-2xl font-semibold text-slate-900">
+            기업 철학과 약속
+          </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">운영</h3>
-              <p className="mt-2 text-slate-600">
-                월요일부터 토요일까지 주·야간 운영으로 긴급 상황에도 대응합니다.
-                자회사 (주)내추럴크릿이 365일 24시간 A/S와 기계 공급을 지원합니다.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                설비 현황
-              </h3>
-              <p className="mt-2 text-slate-600">
-                HS 크린텍 PAROS 50kg · 100kg 세탁기, 50~80kg 건조기를 다수
-                보유하며 베이직·프리미엄 라인 전용 설비를 구성했습니다.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                친환경 세제
-              </h3>
-              <p className="mt-2 text-slate-600">
-                친환경 세제 “겔업(gelup)”과 자체 개발 특수 세제를 적용합니다.
-                고급 샤프란 섬유유연제, 드라이시트, 고압 살균 스팀으로 향과
-                위생을 동시에 잡았습니다.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">물류</h3>
-              <p className="mt-2 text-slate-600">
-                50톤 처리 가능한 수돗물 인프라와 1톤 / 2.5톤 내장탑 차량으로
-                새벽·저녁 수거/납품을 빠르게 수행합니다.
-              </p>
-            </div>
+            {promises.map((promise) => (
+                <div
+                    key={promise.text}
+                    className="flex flex-col items-center rounded-3xl border border-slate-200 bg-white px-6 py-6 text-center text-slate-700 shadow-sm"
+                >
+                  <div
+                      className={`flex h-16 w-16 items-center justify-center rounded-full p-3 ${promise.iconClass}`}
+                  >
+                    <Image
+                        src={promise.icon}
+                        alt={promise.alt}
+                        width={36}
+                        height={36}
+                    />
+                  </div>
+                  <p className="mt-4 text-sm font-medium leading-relaxed">
+                    {promise.text}
+                  </p>
+                </div>
+            ))}
           </div>
         </section>
       </FadeIn>
