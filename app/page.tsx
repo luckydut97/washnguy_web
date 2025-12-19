@@ -68,11 +68,11 @@ export default async function Home() {
         </div>
         <div className="relative z-10 flex h-full flex-col">
           <FadeIn>
-            <div className="mx-auto flex h-full w-full max-w-6xl flex-1 flex-col justify-center px-4 py-16 text-white md:px-8 lg:py-24">
+            <div className="mx-auto flex h-full w-full max-w-6xl flex-1 flex-col justify-center px-4 py-16 text-white md:px-12 lg:py-24">
               <p className="text-base font-bold uppercase tracking-[0.25em] text-white/90 md:text-lg">
                 기업 및 호텔 대량세탁 전문
               </p>
-              <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight md:max-w-5xl md:text-5xl">
+              <h1 className="mt-6 max-w-5xl text-[34px] font-semibold leading-tight md:text-[46px]">
                 품질은 기본, 고객의 만족이 곧 세탁의 완성입니다.
                 <br className="hidden md:block" />
                 신뢰를 바탕으로 끊임없이 노력하는 워시앤가이 입니다.
