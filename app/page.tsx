@@ -200,21 +200,13 @@ export default async function Home() {
                 대량 세탁 특화 인프라
               </h2>
               <p className="mt-4 text-slate-600">
-                HS 크린텍 社 프리미엄 최신 세탁기 라인 '파로스(PHAROS) 50kg 모델'
-                대용량 건조기를 보유 중이며, 자회사 ㈜내추럴크린 에서 365일 24시간 AS 및 기계를 공급받아 안정적인 세탁 서비스를 제공합니다.
+                HS 크린텍 社 프리미엄 최신 세탁기 라인 파로스(PHAROS) 모델
+                최신 세탁기 및 건조기를 보유 중이며, 자회사 ㈜내추럴크린 에서 365일 24시간 AS 및 기계를 공급받아 안정적인 세탁 서비스를 제공합니다.
               </p>
-              <dl className="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-600">
+              <dl className="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-600 items-center content-center">
                 <div>
                   <dt className="font-semibold text-slate-900">운영</dt>
                   <dd>월~토 주/야 교대</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-slate-900">설비</dt>
-                  <dd>세탁기 50~100kg, 건조기 50~80kg</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-slate-900">물 공급</dt>
-                  <dd>100% 수돗물, 50톤 처리</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-slate-900">입고 차량</dt>
