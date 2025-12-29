@@ -122,7 +122,7 @@ export default function AboutPage() {
               },
               {
                 title: "설비 현황",
-                desc: "파로스사의 최신 대형 세탁기 및 건조기를 다수 보유하며 베이직·프리미엄 라인 전용 설비를 구성했습니다.",
+                desc: "파로스(PHAROS)의 최신 대형 세탁기 및 건조기를 다수 보유하며 베이직·프리미엄 라인 전용 설비를 구성했습니다.",
                 icon: "/equipment.png",
               },
               {
